@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import ChildComponent from "./components/ChildComponent";
+import ComponentWillUnmount from "./components/ComponentWillUnmount";
+import GetSnapshotBeforeUpdate from "./components/GetSnapshotBeforeUpdate";
+// import ChildComponent from "./components/ChildComponent";
+import ShouldComponentUpdate from "./components/ShouldComponentUpdate";
 
 class App extends Component {
   constructor() {
     super(); // sve nase lifecycle metode mogu da pristupe onom this
     this.state = {
       name: "This name will change in 3 sec",
+      show: true,
     };
   }
 
@@ -24,8 +28,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>{this.state.name}</p>
-        <ChildComponent />
+        {/* <p>{this.state.name}</p>
+        <ChildComponent /> */}
+        <ShouldComponentUpdate />
+        <GetSnapshotBeforeUpdate />
+        <br />
+        <br />
+        {this.state.show ? <ComponentWillUnmount /> : null}
+        <button onClick={() => this.setState({ show: !this.state.show })}>
+          {this.state.show ? "Unmount Component" : "Mount Component"}
+        </button>
       </div>
     );
   }
