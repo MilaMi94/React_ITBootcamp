@@ -12,8 +12,6 @@ const Select = () => {
   //https://jsonplaceholder.typicode.com/ .I niz koji dobijete upisite u vas state koji se naziva items
 
   const handleSelect = (e) => {
-    console.log(items);
-    console.log(e.target.value);
     setSelect((prevState) => (prevState = e.target.value));
   };
 
@@ -27,7 +25,7 @@ const Select = () => {
     fetch(`https://jsonplaceholder.typicode.com/${select}`)
       .then((response) => response.json())
       .then((json) => setItems(json));
-  }, []);
+  }, [select]);
 
   // Prilikom promene state-a koji kontrolice select value (koristeci useEffect method), pozovite ponovu vas API poziv
 

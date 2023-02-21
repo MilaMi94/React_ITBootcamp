@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Select = () => {
-  const [select, setSelect] = useState("post");
+  const [select, setSelect] = useState("posts");
   const [items, setItems] = useState([]);
   /*
   fetch("https://jsonplaceholder.typicode.com/users")
@@ -11,7 +11,6 @@ const Select = () => {
   //https://jsonplaceholder.typicode.com/ .I niz koji dobijete upisite u vas state koji se naziva items
 
   const handleSelect = (e) => {
-    console.log(e.target.value);
     setSelect((prevState) => (prevState = e.target.value));
   };
 
