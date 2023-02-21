@@ -19,7 +19,7 @@ const SongContextProvider = ({ children }) => {
   ]);
 
   return (
-    <SongContextProvider value={{ songs }}>{children}</SongContextProvider>
+    <SongContext.Provider value={{ songs }}>{children}</SongContext.Provider>
   );
 };
 
