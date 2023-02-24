@@ -3,18 +3,20 @@ import { BookContext } from "../context/BookContext";
 
 const BookDetails = ({ book }) => {
   const { dispatch } = useContext(BookContext);
-  const handleDelete = () => {
-    dispatch({
-      type: "REMOVE_BOOK",
-      payload: { id: book.id },
-    });
-  };
+  // const handleDelete = () => {
+  //   dispatch({
+  //     type: "REMOVE_BOOK",
+  //     payload: { id: book.id },
+  //   });
+  // };
   return (
     <div>
       <h3>
         {book.title}-{book.author}
       </h3>
-      <button onClick={handleDelete}>Delete</button>
+      <button onClick={() => dispatch({ type: "REMOVE_BOOK", id: book.id })}>
+        Delete
+      </button>
     </div>
   );
 };
