@@ -2,7 +2,7 @@ import {
   SEARCH_MOVIES_REQUEST,
   SEARCH_MOVIES_SUCCESS,
   SEARCH_MOVIES_FAILED,
-} from "./Types";
+} from "./types";
 
 export const initialState = {
   loading: true,
@@ -10,7 +10,8 @@ export const initialState = {
   errorMessage: null,
 };
 
-export const MovieReducer = (action, state) => {
+export const reducer = (state, action) => {
+  console.log("reducerrrr", state, action);
   switch (action.type) {
     case SEARCH_MOVIES_REQUEST:
       return {
@@ -28,7 +29,7 @@ export const MovieReducer = (action, state) => {
       return {
         ...state,
         loading: false,
-        errorMessage: action.payload.errorMessage,
+        errorMessage: action.payload,
       };
     default:
       return state;

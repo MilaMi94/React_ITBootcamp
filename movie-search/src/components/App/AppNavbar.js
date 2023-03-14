@@ -1,6 +1,6 @@
 import React from "react";
-import AppNavbarTabs from "./AppNavbarTabs";
 import MovieLogo from "../../assets/images/movie.svg";
+import AppNavbarTabs from "./AppNavbarTabs";
 import "./style.css";
 
 const AppNavbar = () => {

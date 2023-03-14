@@ -1,24 +1,31 @@
 import React, { useState } from "react";
+import "./style.css";
+const Search = ({ onSubmit }) => {
+  const [searchInput, setSearchInput] = useState("");
+  const handleReset = () => {
+    setSearchInput("");
+  };
 
-const Search = () => {
-  const [search, setSearch] = useState("");
   const handleSearch = (e) => {
     e.preventDefault();
+    onSubmit(searchInput);
+    handleReset();
   };
 
-  const handleReset = () => {
-    setSearch("");
-  };
   return (
-    <form className="form-search" onSubmit={handleSearch}>
+    <form className="search" onSubmit={handleSearch}>
       <input
-        className="search-input"
-        value={search}
-        placeholder="Search for favorite movie"
         type="text"
-        onChange={(e) => setSearch(e.target.value)}
-      ></input>
-      <button className="form-search-btn" type="submit" onClick={handleSearch}>
+        value={searchInput}
+        placeholder="Search for favorite movie"
+        onChange={(e) => setSearchInput(e.target.value)}
+      />
+      <button
+        type="submit"
+        value="SEARCH"
+        className="search-button"
+        onClick={handleSearch}
+      >
         <span>Search</span>
       </button>
     </form>

@@ -1,5 +1,5 @@
 .navbar {
-  background-color: dodgerblue;
+  background-color: turquoise;
   padding: 20px 30px;
   display: flex;
   align-items: center;
@@ -22,5 +22,6 @@
 }
 
 .navbar-tab h2 {
-  color: white;
+  display: inline;
+  padding: 5px 10px;
 }

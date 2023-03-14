@@ -36,17 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* styling for app*/
-
-.error-message {
-  background-color: yellow;
-  height: 30px;
-  color: red;
-}
-.form-search .search-input {
-  background-color: rgb(220, 219, 219);
-  border-radius: 40px;
-  border: none;
-  padding: 12px 20px;
-}
